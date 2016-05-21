@@ -20,3 +20,6 @@ test_obj_docs = obj_docs[80:100]
 
 training_docs = train_subj_docs + train_obj_docs
 testing_docs = test_subj_docs + test_obj_docs
+
+sentim_analyzer = SentimentAnalyzer()
+all_words_neg = sentim_analyzer.all_words([mark_negation(doc) for doc in training_docs])        # mark_negation puts a _NEG suffix to words that appear between a negation and a punction mark
