@@ -1,3 +1,2 @@
-![UNDER DEVELOPMENT](https://img.shields.io/badge/status-COMPLETED-green.svg)
+# LIVE VERSION: https://www.maharsh.net/sentiment
 
-**use code from /production since the rest is just for testing purposes**

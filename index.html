@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--{% autoescape true %}-->
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Maharsh Patel</title>
+	<meta name="description" content="Maharsh Patel's Personal Website" />
+	<meta name="keywords" content="maharsh, patel, maharshmellow, programming, code, javascript" />
+	<meta name="author" content="Maharsh Patel" />
+	<link rel="shortcut icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="../css/component.css" />
+	<meta name="theme-color" content="#000021">
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="demo-1">
+			<div class="row content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<h1 class="dictionary-search weight100"><input type="text" name="search" id="dictionarySearchField" value="Enter Text" onfocus="if(this.value == 'Enter Text') {this.value=''}" onblur="if(this.value == ''){this.value ='Enter Text'}"></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/TweenLite.min.js"></script>
+	<script src="../js/EasePack.min.js"></script>
+	<script src="../js/rAF.js"></script>
+	<script src="../js/demo-1.js"></script>
+
+	<script>
+		document.getElementById("dictionarySearchField").style.backgroundColor = "#DECE2F";
+
+		$("#dictionarySearchField").keyup(function(e) {
+			if (e.keyCode == 13) {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (xhttp.readyState == 4 && xhttp.status == 200) {
+						var sentimentColor = xhttp.responseText;
+						console.log(sentimentColor);
+						$("#dictionarySearchField").animate({
+							backgroundColor: sentimentColor
+						});
+					}
+				};
+				xhttp.open("GET", "https://www.maharsh.net/cgi-bin/sentiment.cgi?sentence=" + document.getElementById("dictionarySearchField").value, true);
+				xhttp.send();
+			}
+		});
+	</script>
+
+</body>
+
+</html>
+<!--{% endautoescape %}-->

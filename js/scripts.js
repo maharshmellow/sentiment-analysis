@@ -1,0 +1,1 @@
+$('#splashPage').height($(window).height());
