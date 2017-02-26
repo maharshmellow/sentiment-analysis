@@ -1,4 +1,4 @@
-### LIVE VERSION: https://www.maharsh.net/sentiment.html
+### LIVE VERSION: https://www.maharsh.net/sentiment
 
 **FILES:**
 - sentiment.html (running on the website)
